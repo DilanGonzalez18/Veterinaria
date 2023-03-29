@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="D:/Javaescript/estilos.css"></script>
+        <title>bdljhvl</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<form style="width: 200px; margin: 50px;   border: solid cornflowerblue ; ; background-color: antiquewhite;   " >
+    <div>
+        <label style="background-color: aqua;" >Nombre:</label>
+        <input type="tex" id="txtNombre" placeholder="ingrese Nombre" style="background-color: rosybrown;"> 
+        
+    </div>
+    <div>
+        <label style="background-color: aqua;">Apellido</label>
+        <input type="tex" id="txtApellido" placeholder="ingrese Apellido" style="background-color: rosybrown;">
+
+    </div>
+    <div>
+        <label style="background-color: aqua;" >Edad</label>
+        <input type="number" id="txtEdad" placeholder="ingrese Edad" style="background-color: rosybrown;"> 
+    </div>
+    <div>
+        <label style="background-color: aqua;">Estatura</label>
+        <input type="number" id="txtEstatura" placeholder="ingrese Estatura" style="background-color: rosybrown;">
+        
+    </div>
+    <div>
+        <label style="background-color: aqua;">Peso</label>
+        <input type="number" id="txtPeso" placeholder="ingrese Peso" style="background-color: rosybrown;"> 
+    </div>
+
+    <br>
+        <label>NIVEL DE ESTUDIOS</label>
+        <input type="radio" id="radio1" name="estudios">Sin estudios
+        <br>
+        <input type="radio" id="radio2" name="estudios">Primaria
+        <br>
+        <input type="radio" id="radio3" name="estudios">Secundaria
+        <br>
+        <input type="radio" id="radio4" name="estudios">Universitario
+        <br>
+
+    </div>
+    <div>
+        <label>LENGUAJES DE PROGRAMACION</label>
+        <br>
+        <input type="checkbox" id="checkbox1">JAVAESCRIPT
+        <br>
+        <input type="checkbox" id="checkbox2">Java
+        <br>
+        <input type="checkbox" id="checkbox3">Pyton
+        <br>
+        <input type="checkbox" id="checkbox4">Html
+    </div>
+
+
+    <input type="submit" name="boton" onclick="mostrar()" value="Enviar"></input>
+    <input type="button" name="boton1" onclick="calcuarmayoria()" value="calcuar"></input>
+    <input type="submit" name="boton2" onclick="calcuar()" value="resultado"></input>
+</form>
+<script>
+    let Nombre,Apellido,Edad,Estatura,Peso,estudios,LENGUAJES,ESTUDIOS;
+    let contador=0;
+    function mostrar()
+     {
+
+        let Nombre  = document.getElementById('txtNombre').value;
+        let Apellido = document.getElementById('txtApellido').value;
+        let Edad = document.getElementById('txtEdad').value;
+        let Estatura = document.getElementById('txtEstatura').value;
+        let Peso = document.getElementById('txtPeso').value;
+        //let estudios=document.getElementById('radio').checked;
+        if(document.getElementById('radio1').checked)
+        {
+            alert("no tiene estudio");
+        }
+        if(document.getElementById('radio2').checked)
+        {
+            alert("tiene estudios de primaria");
+        }
+        if(document.getElementById('radio3').checked)
+        {
+            alert("tiene estudios de Segundaria");
+        }
+        if(document.getElementById('radio4').checked)
+        {
+            alert("tiene estudios de universitarios");
+        }
+
+       if(document.getElementById('checkbox1').checked){
+        contador++;
+       }
+       if(document.getElementById('checkbox2').checked){
+        contador++;
+       }
+       if(document.getElementById('checkbox3').checked){
+        contador++;
+       }
+       if(document.getElementById('checkbox4').checked){
+        contador++;
+       }
+
+       alert('sus datos son:'+Nombre+Apellido+Edad+Estatura+Peso);
+       alert("el aprendiz:"+Nombre+" conoce"+contador")
+     }
+
+     function calcuarmayoria()
+     {
+       //et Edad = document.getElementById('texEdad').value;
+        if(Edad >= 18){
+            alert("es mayor de edad");
+        }else
+        
+            alert(" menor de edad");
+        
+            
+
+     }
+     function calcuar(){
+            let IMC =Peso/Estatura;
+            console.log(IMC);
+
+            if(IMC <18.5)
+            {
+                alert("peso inferior al normal");
+
+            } else if(IMC >=18.5 && IMC <=29.9)
+            {
+                alert("su peso esta dentro de lo normal");
+
+            }else if (IMC >=25.0 && IMC <=29.9)
+            {
+               alert("su peso es superior al normal");
+
+            }else{
+                alert("Tiene obesidad debe ir al medico");
+            }
+        }
+</script>
+
+</body>
+</html>
